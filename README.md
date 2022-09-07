@@ -14,8 +14,8 @@ Pega os dados financeiros do site [Fundamentus](www.fundamentus.com.br) referent
 3. Rode o arquivo **baixar_precos_info** para abrir cada empresa no site, pegar os dados e colocar banco
 
 **OBS:** 
-    1. Veja a necessidade de alterar no arquivo fundamentus_bot3.py os nomes das tabelas do banco (pode haver um número "2" por exemplo). Costuma-se usar uma tabela paralela para evitar erro durante o insert e comprometer os dados já salvos.
-    2. O arquivo **nao_baixar.txt** pode ser atualizado manualmente com os dados do arquivo **nao_baixados.txt** onde cada linha deve conter um papel. Desrta forma os papeis contidos em  **nao_baixar.txt** serão ignorados. Atualmente este recurso não está em uso pois as empresas recentemente listadas dão erro por falta de dados mas no futuro quando tiverem dados no site não dará erro e, caso esteja na lista para não baixar, serão equivocadamente ignoradas. 
+1. Veja a necessidade de alterar no arquivo fundamentus_bot3.py os nomes das tabelas do banco (pode haver um número "2" por exemplo). Costuma-se usar uma tabela paralela para evitar erro durante o insert e comprometer os dados já salvos.
+2. O arquivo **nao_baixar.txt** pode ser atualizado manualmente com os dados do arquivo **nao_baixados.txt** onde cada linha deve conter um papel. Desrta forma os papeis contidos em  **nao_baixar.txt** serão ignorados. Atualmente este recurso não está em uso pois as empresas recentemente listadas dão erro por falta de dados mas no futuro quando tiverem dados no site não dará erro e, caso esteja na lista para não baixar, serão equivocadamente ignoradas. 
 
 ## resultados
 
