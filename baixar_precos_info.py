@@ -1,4 +1,6 @@
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup as bs
 import ipdb
 from time import sleep
@@ -22,10 +24,17 @@ class fundamentus:
         self.driver.get(self.url)
 
     def search(self, word='None'):
+        
+        self.driver.find_element(By.ID,self.search_bar).send_keys(word)
+        self.driver.find_element(By.CLASS_NAME,self.btn_search).click()
+
+        '''
         self.driver.find_element_by_id(
             self.search_bar).send_keys(word)
         self.driver.find_element_by_class_name(
             self.btn_search).click()
+        '''
+
 
     def url_atu(self):
         url = self.driver.current_url

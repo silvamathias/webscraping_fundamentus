@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup as bs
 from time import sleep
 import pdb
@@ -18,8 +19,11 @@ class fundamentus:
         self.driver.get(self.url)
 
     def search_tab(self):
-        self.driver.find_element_by_class_name(
-            self.btn_search).click()
+        #self.driver.find_element_by_class_name(
+        #    self.btn_search).click()
+        #self.driver.find_element(By.CLASS_NAME, 'class').send_keys(self.btn_search + Keys.ENTER)
+        self.driver.find_element(By.CLASS_NAME,'botao').click()
+        #return self.driver.find_element(By.CLASS_NAME,'botao')
 
     def search_cia(self, word='None'):
         self.driver.find_element_by_id(
@@ -42,10 +46,9 @@ fu.search_tab()
 html = ff.page_source
 ficha = bs(html, 'html.parser')
 tabela = ficha.findAll('tr')
-
-
 lista = []
 for tb in tabela:
+    
     vlr = tb.findAll('td')
     if vlr:
         lin = [v.text for v in vlr]
@@ -63,4 +66,4 @@ with open('listados_b3.txt','w') as arq_txt:
                 arq_txt.write (col)
                 primeiro = False
 
-fu.fechar()
+#fu.fechar()
