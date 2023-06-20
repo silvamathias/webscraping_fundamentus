@@ -1,10 +1,15 @@
 import psycopg2
 import pandas as pd
+import os
+import dotenv as dot_env
+
+dot_env.load_dotenv(dot_env.find_dotenv())
 
 class conectar:
-    def __init__(self):
-        self.info_h = input('Informe o host:')
-        self.info_s = input('Informe a senha:')
+    def __init__(self, info_h, info_s):
+
+        self.info_h = info_h
+        self.info_s = info_s
         try:
             self.conn = psycopg2.connect(host=self.info_h,database='renda_variavel',user='postgres',password=self.info_s);
             self.cur = self.conn.cursor;
@@ -27,7 +32,7 @@ class conectar:
         return df
 
 if __name__ == '__main__':
-    cn = conectar()
+    cn = conectar(os.getenv('pg_server'), os.getenv('pg_key'))
 
     c = cn.cons_pandas('select * from temp_hist where id_hist <= 20;')
     print(c)
