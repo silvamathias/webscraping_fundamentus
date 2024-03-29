@@ -746,40 +746,164 @@ end as marg_ebit_p,
 ano_atu,
 p_ativos,
 --marg_liquida_p,
---cast(replace(replace(replace(marg_liquida_p, '%', ''), '.', ''), ',', '.') as float) as marg_liquida_p,
+case
+	when marg_liquida_p = '-' then null
+	else cast(replace(replace(replace(marg_liquida_p, '%', ''), '.', ''), ',', '.') as float) 
+end as marg_liquida_p,
 ano_m1,
-p_cap_giro,
-ebit_ativo_p,
+--a partir daqui
+--p_cap_giro,
+case
+	when p_cap_giro = '-' then null
+	else cast(replace(replace(p_cap_giro, '.', ''), ',', '.') as float) 
+end as p_cap_giro,
+--ebit_ativo_p,
+case
+	when ebit_ativo_p = '-' then null
+	else cast(replace(replace(replace(ebit_ativo_p, '%', ''), '.', ''), ',', '.') as float) 
+end as ebit_ativo_p,
 ano_m2,
-p_ativ_circ_liq,
-roic_p,
+--p_ativ_circ_liq,
+case
+	when p_ativ_circ_liq = '-' then null
+	else cast(replace(replace(p_ativ_circ_liq, '.', ''), ',', '.') as float) 
+end as p_ativ_circ_liq,
+--roic_p,
+case
+	when roic_p = '-' then null
+	else cast(replace(replace(replace(roic_p, '%', ''), '.', ''), ',', '.') as float) 
+end as roic_p,
 ano_m3,
-div_yield_p,
-roe_p,
+--div_yield_p,
+case
+	when div_yield_p = '-' then null
+	else cast(replace(replace(replace(div_yield_p, '%', ''), '.', ''), ',', '.') as float) 
+end as div_yield_p,
+--roe_p,
+case
+	when roe_p = '-' then null
+	else cast(replace(replace(replace(roe_p, '%', ''), '.', ''), ',', '.') as float) 
+end as roe_p,
 ano_m4,
-ev_ebitda,
-liquidez_corr,
+--ev_ebitda,
+case
+	when ev_ebitda = '-' then null
+	else cast(replace(replace(ev_ebitda, '.', ''), ',', '.') as float) 
+end as ev_ebitda,
+--liquidez_corr,
+case
+	when liquidez_corr = '-' then null
+	else cast(replace(replace(liquidez_corr, '.', ''), ',', '.') as float) 
+end as liquidez_corr,
 ano_m5,
-ev_ebit,
-div_br_patrim,
-cres_rec_5a_p,
-giro_ativos,
-ativo,
-div_bruta,
-disponibilidades,
-div_liquida,
-ativo_circulante,
-patrim_liq,
-depositos,
-cart_de_credito,
-receita_liquida_12,
-receita_liquida_3,
-ebit_12,
-ebit_3,
-lucro_liquido_12,
-lucro_liquido_3,
-result_int_financ_12,
-result_int_financ_3,
-rec_servicos_12,
-rec_servicos_3
+--ev_ebit,
+case
+	when ev_ebit = '-' then null
+	else cast(replace(replace(ev_ebit, '.', ''), ',', '.') as float) 
+end as ev_ebit,
+--div_br_patrim,
+case
+	when div_br_patrim = '-' then null
+	else cast(replace(replace(div_br_patrim, '.', ''), ',', '.') as float) 
+end as div_br_patrim,
+--cres_rec_5a_p,
+case
+	when cres_rec_5a_p = '-' then null
+	else cast(replace(replace(replace(cres_rec_5a_p, '%', ''), '.', ''), ',', '.') as float) 
+end as cres_rec_5a_p,
+--giro_ativos,
+case
+	when giro_ativos = '-' then null
+	else cast(replace(replace(giro_ativos, '.', ''), ',', '.') as float) 
+end as giro_ativos,
+--ativo,
+case
+	when ativo = '-' then null
+	else cast(replace(replace(ativo, '.', ''), ',', '.') as float) 
+end as ativo,
+--div_bruta,
+case
+	when div_bruta = '-' then null
+	else cast(replace(replace(div_bruta, '.', ''), ',', '.') as float) 
+end as div_bruta,
+--disponibilidades,
+case
+	when disponibilidades = '-' then null
+	else cast(replace(replace(disponibilidades, '.', ''), ',', '.') as float) 
+end as disponibilidades,
+--div_liquida,
+case
+	when div_liquida = '-' then null
+	else cast(replace(replace(div_liquida, '.', ''), ',', '.') as float) 
+end as div_liquida,
+--ativo_circulante,
+case
+	when ativo_circulante = '-' then null
+	else cast(replace(replace(ativo_circulante, '.', ''), ',', '.') as float) 
+end as ativo_circulante,
+--patrim_liq,
+case
+	when patrim_liq = '-' then null
+	else cast(replace(replace(patrim_liq, '.', ''), ',', '.') as float) 
+end as patrim_liq,
+--depositos,
+case
+	when depositos = '-' then null
+	else cast(replace(replace(depositos, '.', ''), ',', '.') as float) 
+end as depositos,
+--cart_de_credito,
+case
+	when cart_de_credito = '-' then null
+	else cast(replace(replace(cart_de_credito, '.', ''), ',', '.') as float) 
+end as cart_de_credito,
+--receita_liquida_12,
+case
+	when receita_liquida_12 = '-' then null
+	else cast(replace(replace(receita_liquida_12, '.', ''), ',', '.') as float) 
+end as receita_liquida_12,
+--receita_liquida_3,
+case
+	when receita_liquida_3 = '-' then null
+	else cast(replace(replace(receita_liquida_3, '.', ''), ',', '.') as float) 
+end as receita_liquida_3,
+--ebit_12,
+case
+	when ebit_12 = '-' then null
+	else cast(replace(replace(ebit_12, '.', ''), ',', '.') as float) 
+end as ebit_12,
+--ebit_3,
+case
+	when ebit_3 = '-' then null
+	else cast(replace(replace(ebit_3, '.', ''), ',', '.') as float) 
+end as ebit_3,
+--lucro_liquido_12,
+case
+	when lucro_liquido_12 = '-' then null
+	else cast(replace(replace(lucro_liquido_12, '.', ''), ',', '.') as float) 
+end as lucro_liquido_12,
+--lucro_liquido_3,
+case
+	when lucro_liquido_3 = '-' then null
+	else cast(replace(replace(lucro_liquido_3, '.', ''), ',', '.') as float) 
+end as lucro_liquido_3,
+--result_int_financ_12,
+case
+	when result_int_financ_12 = '-' then null
+	else cast(replace(replace(result_int_financ_12, '.', ''), ',', '.') as float) 
+end as result_int_financ_12,
+--result_int_financ_3,
+case
+	when result_int_financ_3 = '-' then null
+	else cast(replace(replace(result_int_financ_3, '.', ''), ',', '.') as float) 
+end as result_int_financ_3,
+--rec_servicos_12,
+case
+	when rec_servicos_12 = '-' then null
+	else cast(replace(replace(rec_servicos_12, '.', ''), ',', '.') as float) 
+end as rec_servicos_12,
+--rec_servicos_3
+case
+	when rec_servicos_3 = '-' then null
+	else cast(replace(replace(rec_servicos_3, '.', ''), ',', '.') as float) 
+end as rec_servicos_3
 from lp_fund_web where papel is not null;
